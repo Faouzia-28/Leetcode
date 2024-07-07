@@ -22,6 +22,11 @@ jobs:
           java-version: '11'
           distribution: 'adopt'  # Specify the distribution here, e.g., 'adopt', 'openjdk'
 
+      - name: Build and Test
+        run: |
+          # Example Maven build (adjust as per your build tool)
+          mvn clean package
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
@@ -31,4 +36,4 @@ jobs:
           args: >
             -Dsonar.projectKey=Faouzia-28_Leetcode
             -Dsonar.organization=28faouzia12
-            -Dsonar.java.binaries=target/classes  
+            -Dsonar.java.binaries=target/classes
