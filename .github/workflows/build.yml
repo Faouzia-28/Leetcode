@@ -1,11 +1,12 @@
-.github/workflows/build.yml
 name: Build
+
 on:
   push:
     branches:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
+
 jobs:
   sonarcloud:
     name: SonarCloud
@@ -21,5 +22,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-              sonar.projectKey=Faouzia-28_Leetcode
-              sonar.organization=28faouzia12
+            -Dsonar.projectKey=Faouzia-28_Leetcode
+            -Dsonar.organization=28faouzia12
